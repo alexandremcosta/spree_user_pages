@@ -13,6 +13,7 @@ Spree::Page.class_eval do
 
   private
   class PageParamsCreator
+    attr_reader :order
     def initialize(order)
       @order = order
     end
@@ -26,7 +27,7 @@ Spree::Page.class_eval do
       'example'
     end
     def slug
-      title.parametrize
+      title.parameterize
     end
   end
 end
