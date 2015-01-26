@@ -1,6 +1,12 @@
 FactoryGirl.define do
-  # Define your Spree extensions Factories within this file to enable applications, and other extensions to use and override them.
-  #
-  # Example adding this to your spec_helper will load these Factories for use:
-  # require 'spree_user_pages/factories'
+  #factory :page, class: Spree::Page do
+  #  title { generate(:random_string) }
+  #  body  { generate(:random_description) }
+
+  #  sequence(:slug) { |n| "/page#{n}" }
+
+  #  trait :with_foreign_link do
+  #    foreign_link { Faker::Internet.http_url }
+  #  end
+  #end
 end
