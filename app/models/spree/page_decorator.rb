@@ -3,12 +3,13 @@ Spree::Page.class_eval do
 
   def self.create_from_order(order)
     params = PageParamsCreator.new(order)
-    create(
+    page = create(
       title: params.title,
       body: params.body,
       slug: params.slug,
       user_id: params.user_id
     )
+    page.stores << Spree::Store.current and return page
   end
 
   private
