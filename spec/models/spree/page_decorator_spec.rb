@@ -15,7 +15,7 @@ describe Spree::Page do
       expect(page.user).to eq(@order.user)
     end
     it "creates a page with the same title as order's firstname" do
-      expect(page.title).to eq(@order.bill_address.firstname)
+      expect(page.title).to eq(@order.name)
     end
   end
 end
