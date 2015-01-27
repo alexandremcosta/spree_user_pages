@@ -5,6 +5,16 @@ Spree::Order.class_eval do
     create_pages
   end
 
+  def name
+    if (address = bill_address || ship_address)
+      if Spree::Config[:company]
+        address.company
+      else
+        "#{address.firstname} #{address.lastname}"
+      end
+    end
+  end
+
   private
   def create_pages
     Spree::Page.create_from_order(self)

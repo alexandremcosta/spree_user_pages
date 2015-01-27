@@ -22,13 +22,15 @@ Spree::Page.class_eval do
       order.user.id
     end
     def title
-      order.bill_address.firstname
+      order.name
     end
     def body
       'example'
     end
     def slug
-      title.parameterize
+      slug = '/' + title.parameterize
+      return slug unless Spree::Page.find_by_slug(slug)
+      "#{slug}-#{order.number}"
     end
   end
 end
