@@ -17,6 +17,6 @@ class Spree::PagesController < Spree::StoreController
     @page = Spree::Page.find(params[:id])
   end
   def permitted_params
-    params.require(:page).permit(:title, :slug, :body)
+    params.require(:page).permit(:title, :slug)
   end
 end

@@ -8,10 +8,6 @@
     <%= f.label :slug, Spree.t(:slug) %><span class="required">*</span><br />
     <%= f.text_field :slug, :class => 'form-control required' %>
   </p>
-  <p class="form-group">
-    <%= f.label :body, Spree.t(:body) %><span class="required">*</span><br />
-    <%= f.text_area :body, :class => 'form-control required' %>
-  </p>
   <div class="form-actions" data-hook="buttons">
     <%= button_tag Spree.t('actions.update'), class: 'primary' %>
     <span class="or"><%= Spree.t(:or) %></span>
