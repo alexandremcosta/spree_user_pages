@@ -1,16 +1,16 @@
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @page } %> 
 <%= form_for @page do |f| %>
   <p class="form-group">
-    <%= f.label :title, Spree.t(:title) %><span class="required">*</span><br />
-    <%= f.text_field :title, :class => 'form-control required' %>
+    <%= f.label :title, Spree.t(:title) %>
+    <%= f.text_field :title, :class => 'form-control' %>
   </p>
   <p class="form-group">
-    <%= f.label :slug, Spree.t(:path) %><span class="required">*</span><br />
-    <%= f.text_field :slug, :class => 'form-control required' %>
+    <%= f.label :slug, Spree.t(:path) %>
+    <%= f.text_field :slug, :class => 'form-control' %>
   </p>
   <div class="form-actions" data-hook="buttons">
-    <%= button_tag Spree.t('actions.update'), class: 'primary' %>
+    <%= f.submit Spree.t('update'), class: 'btn btn-primary' %>
     <span class="or"><%= Spree.t(:or) %></span>
-    <%= link_to Spree.t('actions.cancel'), account_path, class: 'button gray' %>
+    <%= link_to Spree.t('actions.cancel'), account_path, class: 'btn btn-default' %>
   </div>
 <% end %>
