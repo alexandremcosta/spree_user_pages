@@ -3,5 +3,6 @@ pt-BR:
   spree:
     my_pages: Minhas Páginas
     title: Título
+    path: Endereço
     updated: Atualizado
 

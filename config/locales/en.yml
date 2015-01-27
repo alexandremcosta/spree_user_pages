@@ -3,4 +3,5 @@ en:
   spree:
     my_pages: My Pages
     title: Title
+    path: Path
     updated: Updated
