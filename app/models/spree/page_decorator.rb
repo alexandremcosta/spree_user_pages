@@ -7,7 +7,9 @@ Spree::Page.class_eval do
       title: params.title,
       body: params.body,
       slug: params.slug,
-      user_id: params.user_id
+      user_id: params.user_id,
+      partial: 'page_layout',
+      render_layout_as_partial: true
     )
     page.stores << Spree::Store.current and return page
   end
