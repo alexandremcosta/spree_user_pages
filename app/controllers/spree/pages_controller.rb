@@ -5,7 +5,7 @@ class Spree::PagesController < Spree::StoreController
   end
 
   def update
-    if @page.update(permitted_params)
+    if @page.update_attributes(permitted_params)
       redirect_to account_path, notice: Spree.t(:updated)
     else
       render 'edit'
