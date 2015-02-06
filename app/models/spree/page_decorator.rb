@@ -1,4 +1,5 @@
 Spree::Page.class_eval do
+  # TODO  remove class_name
   belongs_to :user, class_name: 'Spree::User'
 
   def self.create_from_order(order)
