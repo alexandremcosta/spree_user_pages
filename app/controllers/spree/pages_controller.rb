@@ -1,5 +1,5 @@
 class Spree::PagesController < Spree::StoreController
-  prepend_before_filter :load_object, only: [:edit, :update]
+  before_action :load_object, only: [:edit, :update]
 
   def edit
   end
