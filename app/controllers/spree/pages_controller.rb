@@ -1,5 +1,4 @@
 class Spree::PagesController < Spree::StoreController
-  before_action :authenticate_spree_user!
   before_action :load_and_authorize_object
 
   def edit
