@@ -1,6 +1,6 @@
 class Spree::PagesController < Spree::StoreController
   before_action :authenticate_spree_user!
-  before_action :load_object, only: [:edit, :update]
+  before_action :load_and_authorize_object
 
   def edit
   end
@@ -14,8 +14,9 @@ class Spree::PagesController < Spree::StoreController
   end
 
   private
-  def load_object
+  def load_and_authorize_object
     @page = Spree::Page.find(params[:id])
+    authorize! :update, @page
   end
   def permitted_params
     params.require(:page).permit(:title, :slug)
