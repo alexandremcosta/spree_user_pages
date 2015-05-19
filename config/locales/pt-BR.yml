@@ -5,4 +5,13 @@ pt-BR:
     title: Título
     path: Endereço
     updated: Atualizado
+  devise:
+    user_confirmations:
+      resend: Clique aqui para reenviar o e-mail de confirmação.
+      spree_user:
+        confirmed: Seu e-mail foi confirmado, obrigado!
+        send_instructions: Em alguns minutos você recebrá um email com instruções para confimar sua conta.
+    failure:
+      unconfirmed_title: Você precisa confirmar seu e-mail.
+      unconfirmed: Acesse seu e-mail, nós te enviamos uma confirmação. O seu pedido só será visualizado pelo estúdio quando o seu e-mail estiver confirmado.
 
