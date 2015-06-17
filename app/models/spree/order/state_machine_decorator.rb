@@ -9,7 +9,7 @@ Spree::Order.class_eval do
   end
 
   def delivery_required?
-    products.not_user_pages.any?
+    products.not_plan.any?
   end
 end
 

@@ -1,25 +1,25 @@
 Spree::Page.class_eval do
-  # TODO  remove class_name
-  belongs_to :user, class_name: 'Spree::User'
+  belongs_to :user
 
   def self.create_from_order(order)
-    params = PageParamsCreator.new(order)
-    page = create(
-      title: params.title,
-      body: params.body,
-      slug: params.slug,
-      user_id: params.user_id,
-      layout: 'page_layout',
-      render_layout_as_partial: true
-    )
-    page.stores << Spree::Store.current and return page
+    page = create PageParams.new(order).hash
+    page.stores << Spree::Store.current
+    page
   end
 
   private
-  class PageParamsCreator
+  class PageParams
     attr_reader :order
     def initialize(order)
       @order = order
+    end
+    def hash
+      { title: params.title,
+        body: params.body,
+        slug: params.slug,
+        user_id: params.user_id,
+        layout: 'page_layout',
+        render_layout_as_partial: true }
     end
     def user_id
       order.user.id

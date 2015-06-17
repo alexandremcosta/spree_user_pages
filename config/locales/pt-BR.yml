@@ -1,6 +1,7 @@
 ---
 pt-BR:
   spree:
+    plan: Plano
     my_pages: Minhas Páginas
     title: Título
     path: Endereço
@@ -13,5 +14,5 @@ pt-BR:
         send_instructions: Em alguns minutos você recebrá um email com instruções para confimar sua conta.
     failure:
       unconfirmed_title: Você precisa confirmar seu e-mail.
-      unconfirmed: Acesse seu e-mail, nós te enviamos uma confirmação. O seu pedido só será visualizado pelo estúdio quando o seu e-mail estiver confirmado.
+      unconfirmed: Acesse seu e-mail, nós te enviamos uma confirmação.
 

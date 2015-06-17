@@ -1,12 +1,12 @@
 <% if spree_current_user && spree_current_user.not_confirmed? %>
   <div class='alert alert-confirmation'>
-    <h4><strong><%= t('devise.failure.unconfirmed_title') %></strong></h4>
-    <p><%= t('devise.failure.unconfirmed') %></p>
-    <br />
-    <%= form_for(spree_current_user, as: :spree_user, url: spree_user_confirmation_path, method: :post) do |f| %>
-      <%= f.hidden_field :email, value: spree_current_user.email %>
-      <%= f.submit t('devise.user_confirmations.resend'), class: 'btn btn-default' %>
-    <% end %>
+    <div class='text-center'>
+      <h4><strong><%= t('devise.failure.unconfirmed_title') %></strong> <small><%= t('devise.failure.unconfirmed') %></small></h4>
+      <%= form_for(spree_current_user, as: :spree_user, url: spree_user_confirmation_path, method: :post) do |f| %>
+        <%= f.hidden_field :email, value: spree_current_user.email %>
+        <%= f.submit t('devise.user_confirmations.resend'), class: 'btn btn-default' %>
+      <% end %>
+    </div>
     </div>
   </div>
 <% end %>
