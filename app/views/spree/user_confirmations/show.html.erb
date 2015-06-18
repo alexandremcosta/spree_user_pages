@@ -1,0 +1,10 @@
+<h2>Account Activation</h2>
+
+<%= form_for resource, :as => resource_name, :url => update_spree_user_confirmation_path, :html => {:method => 'patch'}, :id => 'activation-form' do |f| %>
+  <%= devise_error_messages! %>
+  <% if spree_current_user.has_no_password? %>
+    <p><%= f.label :password, 'Choose a Password:' %> <%= f.password_field :password %></p>
+  <% end %>
+  <%= hidden_field_tag :confirmation_token, @confirmation_token %>
+  <p><%= f.submit "Activate" %></p>
+<% end %>

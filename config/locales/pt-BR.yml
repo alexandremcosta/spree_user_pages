@@ -13,6 +13,7 @@ pt-BR:
         confirmed: Seu e-mail foi confirmado, obrigado!
         send_instructions: Em alguns minutos você recebrá um email com instruções para confimar sua conta.
     failure:
-      unconfirmed_title: Você precisa confirmar seu e-mail.
+      unconfirmed_title: E não esqueça de confirmar seu e-mail.
       unconfirmed: Acesse seu e-mail, nós te enviamos uma confirmação.
+      set_password_title: Para começar, escolha uma senha para acessar sua conta
 

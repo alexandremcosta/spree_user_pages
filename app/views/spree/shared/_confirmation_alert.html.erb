@@ -1,12 +1,29 @@
-<% if spree_current_user && spree_current_user.not_confirmed? %>
-  <div class='alert alert-confirmation'>
-    <div class='text-center'>
-      <h4><strong><%= t('devise.failure.unconfirmed_title') %></strong> <small><%= t('devise.failure.unconfirmed') %></small></h4>
-      <%= form_for(spree_current_user, as: :spree_user, url: spree_user_confirmation_path, method: :post) do |f| %>
-        <%= f.hidden_field :email, value: spree_current_user.email %>
-        <%= f.submit t('devise.user_confirmations.resend'), class: 'btn btn-default' %>
-      <% end %>
+<% if spree_current_user %>
+  <% if spree_current_user.has_no_password? %>
+    <div class='alert alert-confirmation'>
+      <div class='text-center'>
+        <h4>
+          <strong><%= t('devise.failure.set_password_title') %></strong>
+          <%= form_for Spree::User.new, :as => spree_current_user, :url => spree.user_path(spree_current_user), :method => :put do |f| %>
+            <%= f.password_field :password, :placeholder => Spree.t(:password), autofocus: true %>
+            <%= f.submit "Continuar", class: 'btn btn-primary' %>
+          <% end %>
+        </h4>
+      </div>
     </div>
+  <% end %>
+  <% if spree_current_user.not_confirmed? %>
+    <div class='alert alert-confirmation'>
+      <div class='text-center'>
+        <h4>
+          <strong><%= t('devise.failure.unconfirmed_title') %></strong> <small><%= t('devise.failure.unconfirmed') %></small>
+          <br />
+          <%= form_for(spree_current_user, as: :spree_user, url: spree_user_confirmation_path, method: :post) do |f| %>
+            <%= f.hidden_field :email, value: spree_current_user.email %>
+            <%= f.submit t('devise.user_confirmations.resend'), class: 'btn btn-default btn-sm' %>
+          <% end %>
+        </h4>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
