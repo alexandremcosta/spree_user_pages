@@ -1,4 +1,4 @@
-<% if spree_current_user %>
+<% if params[:controller] != 'spree/checkout' && spree_current_user %>
   <% if spree_current_user.has_no_password? %>
     <div class='alert alert-confirmation'>
       <div class='text-center'>
