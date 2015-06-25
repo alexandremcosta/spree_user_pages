@@ -2,7 +2,9 @@ require 'spree/order/state_machine_decorator.rb'
 
 Spree::Order.class_eval do
   def after_complete_callbacks
-    create_pages
+    user.update_plan(first_plan) if first_plan
+    page = user.first_page
+    page.update_from_order(self)
   end
 
   def name
@@ -16,8 +18,8 @@ Spree::Order.class_eval do
   end
 
   private
-  def create_pages
-    Spree::Page.create_from_order(self)
+  def first_plan
+    products.plan.first
   end
 end
 

@@ -1,5 +1,12 @@
 Spree::User.class_eval do
   has_many :pages
+  belongs_to :plan, class_name: 'Spree::Product'
+
+  after_create :create_first_page
+
+  def name
+    email.split('@').first
+  end
 
   def not_confirmed?
     confirmed_at.blank?
@@ -9,7 +16,19 @@ Spree::User.class_eval do
     self.encrypted_password.blank?
   end
 
+  def first_page
+    pages.first
+  end
+
+  def update_plan(plan)
+    update_attributes(plan: plan)
+  end
+
   private
+  def create_first_page
+    Spree::Page.create_from_user(self)
+  end
+
   def password_required?
     # Password is not required for new records
     !persisted? ? false : (password.present? || !password_confirmation.present?)
