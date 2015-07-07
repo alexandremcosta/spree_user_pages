@@ -1,6 +1,7 @@
 ---
 pt-BR:
   spree:
+    free_plan: Gratuito
     plan: Plano
     my_pages: Minhas Páginas
     title: Título

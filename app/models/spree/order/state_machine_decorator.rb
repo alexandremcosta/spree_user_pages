@@ -11,6 +11,12 @@ Spree::Order.class_eval do
   def delivery_required?
     products.not_plan.any?
   end
+
+  def after_complete_callbacks
+    user.update_plan(first_plan) if first_plan
+    page = user.first_page
+    page.update_from_order(self)
+  end
 end
 
 Spree::Order.state_machine.after_transition to: :complete, do: :after_complete_callbacks

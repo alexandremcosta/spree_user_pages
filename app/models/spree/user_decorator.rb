@@ -24,6 +24,10 @@ Spree::User.class_eval do
     update_attributes(plan: plan)
   end
 
+  def plan
+    super || Spree::FreePlan.new
+  end
+
   private
   def create_first_page
     Spree::Page.create_from_user(self)

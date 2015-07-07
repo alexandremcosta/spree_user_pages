@@ -1,6 +1,7 @@
 ---
 en:
   spree:
+    free_plan: Free
     plan: Plan
     my_pages: My Pages
     title: Title
