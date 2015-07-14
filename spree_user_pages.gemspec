@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_user_pages'
-  s.version     = '2.4.2.13'
+  s.version     = '2.4.2.14'
   s.summary     = 'Add feature to sell web pages'
   s.required_ruby_version = '>= 1.9.3'
 
