@@ -16,16 +16,16 @@ Spree::User.class_eval do
     self.encrypted_password.blank?
   end
 
-  def first_page
-    pages.first
-  end
-
   def update_plan(plan)
-    update_attributes(plan: plan)
+    update_attribute(:plan, plan)
   end
 
   def plan
     super || Spree::FreePlan.new
+  end
+
+  def free?
+    plan.free?
   end
 
   private
