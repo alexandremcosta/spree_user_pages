@@ -3,7 +3,7 @@ Spree::OrdersController.class_eval do
 
   private
   def skip_cart
-    @order = current_order || Order.incomplete.find_or_initialize_by(guest_token: cookies.signed[:guest_token])
+    @order = current_order || Spree::Order.incomplete.find_or_initialize_by(guest_token: cookies.signed[:guest_token])
     @order.remove_remaining_plans
     if @order.checkout_allowed? && @order.skip_cart?
       @order.next
