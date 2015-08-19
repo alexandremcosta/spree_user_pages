@@ -1,0 +1,7 @@
+<ul>
+  <% @result.each do |result| %>
+    <li>
+      <%= link_to result.name, user_page_path(result.page) %>
+    </li>
+  <% end %>
+</ul>
