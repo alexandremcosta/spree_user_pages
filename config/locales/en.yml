@@ -7,3 +7,6 @@ en:
     title: Title
     path: Path
     updated: Updated
+    search:
+      where: Where
+      call_to_action: Search

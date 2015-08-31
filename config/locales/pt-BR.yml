@@ -7,6 +7,9 @@ pt-BR:
     title: Título
     path: Endereço
     updated: Atualizado
+    search:
+      where: Where
+      call_to_action: Search
   devise:
     user_confirmations:
       resend: Clique aqui para reenviar o e-mail de confirmação.
