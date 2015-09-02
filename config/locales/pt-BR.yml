@@ -8,8 +8,9 @@ pt-BR:
     path: Endereço
     updated: Atualizado
     search:
-      where: Where
-      call_to_action: Search
+      where: Onde
+      call_to_action: Buscar
+      one_result: Sua busca retornou um resultado
   devise:
     user_confirmations:
       resend: Clique aqui para reenviar o e-mail de confirmação.
