@@ -30,7 +30,7 @@ Spree::Order.class_eval do
   end
 
   def after_complete_callbacks
-    first_page = user.pages.first
+    first_page = user.first_or_create_page
     first_page.update_from_order(self) if first_page.present? && user.free?
     user.update_plan(plans.first) if plans.any?
   end

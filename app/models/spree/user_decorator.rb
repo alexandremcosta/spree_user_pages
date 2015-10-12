@@ -1,51 +1,30 @@
 Spree::User.class_eval do
-  has_many :pages
-  belongs_to :plan, class_name: 'Spree::Product'
+  include Spree::User::Plan
+  include Spree::User::Confirmation
 
-  after_create :create_first_page
+  has_many :pages
+  attr_accessor :has_page
+  after_create :create_page, if: :has_page
 
   def name
     email.split('@').first
   end
 
-  def not_confirmed?
-    confirmed_at.blank?
-  end
-
-  def has_no_password?
-    self.encrypted_password.blank?
-  end
-
-  def update_plan(plan)
-    update_attribute(:plan, plan)
-  end
-
-  def plan
-    super || Spree::FreePlan.new
-  end
-
-  def free?
-    plan.free?
+  def first_or_create_page
+    pages.first || create_page
   end
 
   private
-  def create_first_page
+  def create_page
+    user!
     Spree::Page.create_from_user(self)
   end
 
-  def password_required?
-    # Password is not required for new records
-    !persisted? ? false : (password.present? || !password_confirmation.present?)
+  def user!
+    spree_roles << Spree::Role.user unless user?
   end
 
-  def attempt_set_password(params)
-    p = {}
-    p[:password] = params[:password]
-    p[:password_confirmation] = params[:password_confirmation]
-    update_attributes(p)
-  end
-
-  def only_if_unconfirmed
-    pending_any_confirmation {yield}
+  def user?
+    has_spree_role?('user')
   end
 end
