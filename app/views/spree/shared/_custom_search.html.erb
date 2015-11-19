@@ -1,6 +1,6 @@
 <%= form_tag spree.search_path, :method => :get, class: "navbar-form" do %>
   <div class="form-group">
-    <%= search_field_tag :query, params[:query], :placeholder => Spree.t('search.where'), class: "form-control" %>
+    <%= search_field_tag :query, params[:query], :placeholder => Spree.t('custom_search.where'), class: "form-control" %>
   </div>
-  <%= submit_tag Spree.t('search.call_to_action'), :name => nil, class: "btn btn-success" %>
+  <%= submit_tag Spree.t('custom_search.call_to_action'), :name => nil, class: "btn btn-success" %>
 <% end %>

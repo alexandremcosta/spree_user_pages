@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_user_pages'
-  s.version     = '2.4.2.14'
+  s.version     = '3.0.0'
   s.summary     = 'Add feature to sell web pages'
   s.required_ruby_version = '>= 1.9.3'
 
@@ -15,11 +15,10 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'spree_core', '~> 2.4.2'
-  s.add_dependency 'spree_static_content', '~> 2.3.0'
-  s.add_dependency 'spree_auth_devise', '~> 2.2.0'
-  s.add_dependency 'spree_bootstrap_frontend', '~> 2.4.0.rc3'
-  s.add_dependency 'cancancan', '~> 1.9.2'
+  s.add_dependency 'spree_core', '~> 3.0'
+  s.add_dependency 'spree_static_content', '~> 3.0'
+  s.add_dependency 'spree_auth_devise', '~> 3.0'
+  s.add_dependency 'cancancan', '~> 1.10.1'
 
   s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'coffee-rails'

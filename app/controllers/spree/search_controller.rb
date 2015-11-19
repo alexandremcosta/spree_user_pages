@@ -5,7 +5,7 @@ class Spree::SearchController < Spree::StoreController
     @results = search.results
     if @results.size == 1
       redirect_to user_page_path(@results.first.page),
-        flash: {notice: Spree.t('search.one_result')}
+        flash: {notice: Spree.t('custom_search.one_result')}
     elsif search.message.present?
       flash.now[:notice] = search.message
     end

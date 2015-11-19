@@ -7,7 +7,7 @@ en:
     title: Title
     path: Path
     updated: Updated
-    search:
+    custom_search:
       where: Where
       call_to_action: Search
       one_result: Your search returned one result

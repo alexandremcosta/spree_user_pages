@@ -7,7 +7,8 @@ pt-BR:
     title: Título
     path: Endereço
     updated: Atualizado
-    search:
+    quick_search: Busca rápida
+    custom_search:
       where: Onde
       call_to_action: Buscar
       one_result: Sua busca retornou um resultado
