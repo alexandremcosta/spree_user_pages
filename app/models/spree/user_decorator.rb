@@ -6,7 +6,7 @@ Spree::User.class_eval do
   attr_accessor :has_page
   after_create :create_page, if: :has_page
 
-  def name
+  def login_name
     email.split('@').first
   end
 

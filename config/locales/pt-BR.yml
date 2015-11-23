@@ -22,4 +22,5 @@ pt-BR:
       unconfirmed_title: Não esqueça de confirmar seu e-mail.
       unconfirmed: Acesse seu e-mail, nós te enviamos uma confirmação.
       set_password_title: Para começar, escolha uma senha para acessar sua conta
+      already_authenticated: Você está logado
 
