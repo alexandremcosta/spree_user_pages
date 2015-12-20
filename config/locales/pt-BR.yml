@@ -13,6 +13,9 @@ pt-BR:
       call_to_action: Buscar
       one_result: Sua busca retornou um resultado
   devise:
+    omniauth_callbacks:
+      spree_user:
+        failure: Não foi possível se conectar a rede social.
     user_confirmations:
       resend: Clique aqui para reenviar o e-mail de confirmação.
       spree_user:
