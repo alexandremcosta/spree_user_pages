@@ -10,7 +10,7 @@ module Spree
 
         protected
         def user_page_url(page)
-          request.host_with_port + page.slug
+          "http://#{Spree::Store.current.url}#{page.slug}"
         end
         def user_page_path(page)
           page.slug
